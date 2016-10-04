@@ -18,3 +18,32 @@ def merge_lists(a, b)
 
   final_list_head
 end
+
+def reverse_sub_list(list, start_idx, end_idx)
+  curr = list
+  curr_idx = 1
+  pre_sub_node
+
+  until curr_idx = start_idx -1 
+    curr = curr.next
+    curr_idx += 1
+  end
+  
+  pre_sub_node = curr
+  reversed = curr.next
+  curr = reversed.next
+
+  until curr_idx > end_idx  
+    next_node = curr.next 
+    curr.next = reversed
+    reversed = curr
+    current = next_node
+
+    curr_idx += 1
+  end  
+  
+  
+  pre_sub_node.next.next = curr
+  pre_sub_node.next = prev
+  
+end
