@@ -25,7 +25,7 @@ describe "#base_converter_2" do
 
 end
 
-describe 'replace and remove' do
+describe '#replace_and_remove' do
   it 'replaces and removes accurately' do 
     arr = %w(a c d b b c a c) 
     replace_and_remove(arr, 7)

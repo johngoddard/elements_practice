@@ -31,3 +31,13 @@ describe '6.11 #random_subset' do
     rand2 = random_subset(b, 6)
   end
 end
+
+describe '6.17 #spiral_ordering' do 
+  it 'prints out the spiral with a 3 x 3 array' do 
+    expect(spiral_ordering([[1,2,3],[4,5,6],[7,8,9]])).to eq([1,2,3,6,9,8,7,4,5])
+  end
+
+  it 'prints out the spiral with a 4 x 4 array' do 
+    expect(spiral_ordering([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])).to eq([1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10])
+  end
+end

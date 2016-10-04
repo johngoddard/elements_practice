@@ -18,8 +18,6 @@ def int_to_string(num)
   is_negative ? "-#{res}" : res
 end
 
-# puts int_to_string(123)
-# puts int_to_string(-123)
 
 def string_to_int(str)
   res = 0
@@ -36,8 +34,6 @@ def string_to_int(str)
 
   is_neg ? -res : res
 end
-
-
 
 # 7.2 
 def base_converter_2(str, b1, b2)
@@ -96,7 +92,7 @@ end
 def replace_and_remove(arr, len)
   write_idx = 0 
   count = 0
-  p arr 
+
   (0...len).each do |i|
     if arr[i] == 'a'
       arr << 'd'
@@ -123,5 +119,4 @@ def replace_and_remove(arr, len)
       write_idx -= 1
     end
   end
-
 end

@@ -20,7 +20,6 @@ def dutch_flag(arr, idx)
   arr
 end
 
-# p dutch_flag([6,3,3,4,2,1,2,2,3,8,7,6,5,3], 1)
 
 
 def stock_picker(arr)
@@ -45,8 +44,6 @@ def stock_picker(arr)
   biggest_diff_days
 end
 
-p stock_picker([13,7,12,8, 13])
-p stock_picker([13,7,12,5, 13])
 
 def random_subset(arr, num)
   raise 'hell' unless num <= arr.length
@@ -58,3 +55,45 @@ def random_subset(arr, num)
 
   arr[0...num]
 end
+
+def spiral_ordering(arr)
+  min_col = 0
+  max_col = arr[0].length - 1 
+  min_row = 0
+  max_row = arr.length - 1 
+  
+  operations = [:min_row, :max_col, :max_row, :min_col]
+  count = 0
+  res = []
+
+  until(res.length == arr[0].length * arr.length)
+
+    case(operations[count % 4])
+    when :min_row 
+     arr[min_row].each_with_index do |el, idx|
+       res << el if idx >= min_col && idx <= max_col
+     end
+     min_row += 1
+    when :max_col   
+      (min_row..max_row).each do |i|
+        res << arr[i][max_col]
+      end
+      max_col -= 1
+    when :max_row
+      (max_col).downto(min_col).each do |i|
+        res << arr[max_row][i]
+      end
+      max_row -= 1
+    when :min_col
+      max_row.downto(min_row).each do |i|
+        res << arr[i][min_col]
+      end
+      min_col += 1
+    end
+    
+    count += 1
+  end
+
+  res
+end
+
