@@ -48,3 +48,13 @@ end
 p stock_picker([13,7,12,8, 13])
 p stock_picker([13,7,12,5, 13])
 
+def random_subset(arr, num)
+  raise 'hell' unless num <= arr.length
+
+  (0...num).each do |i| 
+    random_idx = i + rand(arr.length - i)
+    arr[i], arr[random_idx] = arr[random_idx], arr[i]
+  end
+
+  arr[0...num]
+end

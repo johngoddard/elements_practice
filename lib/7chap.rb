@@ -39,7 +39,7 @@ end
 
 
 
-#8.2 
+# 7.2 
 def base_converter_2(str, b1, b2)
   num = convert_to_int(str, b1).to_s
   base10_converter(num, b2)
@@ -89,4 +89,39 @@ def base10_converter(str, base)
   end
   
   res
+end
+
+# 7.4 replace and remove
+
+def replace_and_remove(arr, len)
+  write_idx = 0 
+  count = 0
+  p arr 
+  (0...len).each do |i|
+    if arr[i] == 'a'
+      arr << 'd'
+      count += 1
+    end
+    
+    if (arr[i] != 'b')
+      arr[write_idx] = arr[i]
+      write_idx += 1
+    end
+  end
+
+  read_idx = write_idx
+  write_idx = write_idx + count  
+
+  read_idx.downto(0).each do |idx|
+    if(arr[idx] == 'a')
+      arr[write_idx] = 'd'
+      write_idx -= 1
+      arr[write_idx] = 'd'
+      write_idx -= 1
+    else
+      arr[write_idx] = arr[idx]
+      write_idx -= 1
+    end
+  end
+
 end

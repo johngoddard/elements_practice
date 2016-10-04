@@ -24,3 +24,11 @@ describe "#base_converter_2" do
   end
 
 end
+
+describe 'replace and remove' do
+  it 'replaces and removes accurately' do 
+    arr = %w(a c d b b c a c) 
+    replace_and_remove(arr, 7)
+    expect(arr.take(8)).to eq(%w(d d c d c d d c))
+  end
+end
