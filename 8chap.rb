@@ -33,7 +33,7 @@ def reverse_sub_list(list, start_idx, end_idx)
   reversed = curr.next
   curr = reversed.next
 
-  until curr_idx > end_idx  
+  until curr_idx == end_idx  
     next_node = curr.next 
     curr.next = reversed
     reversed = curr
@@ -44,6 +44,6 @@ def reverse_sub_list(list, start_idx, end_idx)
   
   
   pre_sub_node.next.next = curr
-  pre_sub_node.next = prev
+  pre_sub_node.next = reversed
   
 end
