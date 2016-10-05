@@ -26,9 +26,6 @@ def eval_RPN(string)
   first
 end
 
-puts eval_RPN("3,4,+,2,*,1,+")
-puts eval_RPN("1972")
-puts eval_RPN("-641,6,/,28,/")
  
 #9.3
 
@@ -55,5 +52,29 @@ def is_well_formed?(string)
   true
 end
 
-puts is_well_formed?('([]){()}')
-puts is_well_formed?('([)')
+#9.7 tree levels
+
+def tree_levels(root)
+ q = [root]
+ res = []
+ level_count = 1
+ level_vals = []
+
+ until q.empty? 
+   node = q.shift
+   level_count -= 1
+   level_vals << node.val
+
+   q << node.left if node.left
+   q << node.right if node.right
+
+   if level_count == 0
+     level_count = q.length 
+     res << level_vals
+     level_vals = []
+   end
+ end 
+
+ res
+end
+
