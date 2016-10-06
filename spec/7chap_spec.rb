@@ -1,6 +1,6 @@
 require '7chap'
 
-describe "#base_converter" do 
+describe "7.2 #base_converter" do 
   it "converts a dec10 number to binary" do 
     expect(base10_converter('5', 2)).to eq('101')
   end
@@ -14,7 +14,7 @@ describe "#base_converter" do
   end
 end
 
-describe "#base_converter_2" do 
+describe "7.2 #base_converter_2" do 
   it 'converts a binary number to hex' do 
     expect(base_converter_2('11111', 2, 16)).to eq('1f')
   end
@@ -25,7 +25,7 @@ describe "#base_converter_2" do
 
 end
 
-describe '#replace_and_remove' do
+describe '7.4 #replace_and_remove' do
   it 'replaces and removes accurately' do 
     arr = %w(a c d b b c a c) 
     replace_and_remove(arr, 7)
