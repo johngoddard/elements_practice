@@ -1,6 +1,6 @@
 require_relative '../util/heap.rb'
 
-#11.1 
+#11.1: Accept multiple sorted arrays and return a sorted array of all of their elements
 
 def sorted_arr_sort(*arrs)
   h = Heap.new {|a, b| a[:val] <=> b[:val]}
@@ -21,7 +21,7 @@ def sorted_arr_sort(*arrs)
   res
 end
 
-#11.4
+#11.4: Return the kth largest number in an array
 
 def kth_largest(arr, k)
   curr = 0

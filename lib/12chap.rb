@@ -17,7 +17,7 @@ def binary_search(arr, target)
   nil
 end
 
-#12.1 naive
+#12.1(naive): Find the first occurrence of a target number in a sorted array  
 
 def first_occurence(arr, target)
   idx = binary_search(arr, target)
@@ -53,7 +53,7 @@ def first_occurence2(arr, target)
   result 
 end
 
-#12.4
+# 12.4: Accept a number n, and return the largest number whose square is less than or equal to n. E.g. 16 and 17 would both return 4. Aim for log(n) time
 
 def closest_root(num, candidates = nil)
   return num if num == 1
@@ -76,7 +76,7 @@ def closest_root(num, candidates = nil)
   nil
 end
 
-#12.8
+#12.8: Find the kth largest number in array. The optimal solution has O(1) space & linear time
 
 def kth_largest_in_place(arr, k, start=0, len = arr.length)
   return nil if len < 1

@@ -1,3 +1,7 @@
+# 6.1: Accept an array of ints and an index. Return an array with 3 sections: all the numbers
+# less than the number at the index, all numbers equal to the number at the index, and then all 
+# greater than the pivot
+
 def dutch_flag(arr, idx)
   arr[idx], arr[0] = arr[0], arr[idx]
   pivot = arr.first
@@ -20,7 +24,8 @@ def dutch_flag(arr, idx)
   arr
 end
 
-
+# 6.6: Accept an array of stock prices. Pick the pair of the days where you could buy then sell 
+# and make the largest profit
 
 def stock_picker(arr)
   return 0 unless arr.length > 1 
@@ -44,6 +49,7 @@ def stock_picker(arr)
   biggest_diff_days
 end
 
+# 6.11 Accept an array and return a random subset from that array of length n
 
 def random_subset(arr, num)
   raise 'hell' unless num <= arr.length
@@ -55,6 +61,8 @@ def random_subset(arr, num)
 
   arr[0...num]
 end
+
+# 6.17: Accept a 2-D array and return a 1-D array with the numbers in spiral ordering
 
 def spiral_ordering(arr)
   min_col = 0

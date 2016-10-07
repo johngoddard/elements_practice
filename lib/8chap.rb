@@ -1,4 +1,4 @@
-# 8.1
+# 8.1: Merge two sorted link lists (no specs)
 
 def merge_lists(a, b)
   final_list_end = nil 
@@ -18,6 +18,8 @@ def merge_lists(a, b)
 
   final_list_head
 end
+
+# 8.2 reverse a sub_list in a linked list, and return the final list (no specs)
 
 def reverse_sub_list(list, start_idx, end_idx)
   curr = list

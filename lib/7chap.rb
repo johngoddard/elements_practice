@@ -1,3 +1,4 @@
+# 7.1 Write a method that turns an int into a string, and another that turns a string into an int
 
 def int_to_string(num)
   digits = []
@@ -35,7 +36,8 @@ def string_to_int(str)
   is_neg ? -res : res
 end
 
-# 7.2 
+# 7.2: Accept a string, and two bases. Convert the string from the first base to the second
+
 def base_converter_2(str, b1, b2)
   num = convert_to_int(str, b1).to_s
   base10_converter(num, b2)
@@ -87,7 +89,7 @@ def base10_converter(str, base)
   res
 end
 
-# 7.4 replace and remove
+# 7.4: Accept an array of characters. Replace every 'a' with 2 'd's, and remove every 'b'
 
 def replace_and_remove(arr, len)
   write_idx = 0 

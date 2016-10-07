@@ -1,4 +1,4 @@
-#9.2
+# 9.2: Accept a string a in RPN calculator format, and return the resulting value
 
 def eval_RPN(string)
   rpn_els = string.split(',')
@@ -27,7 +27,8 @@ def eval_RPN(string)
 end
 
  
-#9.3
+# 9.3: Accept a string containing '(', ')', '{', '}', ']', '[', and return whether the string is well formed. 
+# A string is well formed if each open paren/bracket/brace has a close brace in a valid order: e.g. '{()[]}()
 
 def is_well_formed?(string)
   left_parens = []
@@ -52,7 +53,8 @@ def is_well_formed?(string)
   true
 end
 
-#9.7 tree levels
+# 9.7: Accept the root of a tree and return a nested array where each sub array contains all of the values from 
+# a single level of the tree
 
 def tree_levels(root)
  q = [root]

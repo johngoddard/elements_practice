@@ -1,3 +1,5 @@
+# 13.1: take in a string and return whether any of it's permutations are palindromes
+
 def palindrome_perm?(str)
   char_counts = Hash.new(0)
   str.chars.each{|ch| char_counts[ch] += 1}
@@ -10,6 +12,8 @@ def palindrome_perm?(str)
 
   odd_counts < 2 ? true : false
 end
+
+# 13.2: accept 2 strings and determine whether first could be constructed by characters from the second
 
 def is_constructable?(letter, mag)
   letter_words = letter.split(" ")
@@ -34,6 +38,8 @@ def is_constructable?(letter, mag)
 
   false
 end
+
+#13.6: Accept a string of words and return the closest repeat. Return the repeated word and the indices of the repeat
 
 def closest_repeat(string)
   min_dist = nil
