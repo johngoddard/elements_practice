@@ -20,3 +20,10 @@ describe '13.2 is_constructable?' do
     expect(is_constructable?('the cat in the hat', 'the cat')).to eq(false)
   end
 end
+
+describe '13.6 closest_repeat' do 
+  it 'returns the word and closest indices' do 
+    str = 'all work and no play makes for no work no fun and no results'
+    expect(closest_repeat(str)).to eq(['no', [7,9]])
+  end
+end

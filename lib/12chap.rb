@@ -53,6 +53,8 @@ def first_occurence2(arr, target)
   result 
 end
 
+#12.4
+
 def closest_root(num, candidates = nil)
   return num if num == 1
   candidates ||= (0..num/2).to_a
@@ -73,6 +75,8 @@ def closest_root(num, candidates = nil)
 
   nil
 end
+
+#12.8
 
 def kth_largest_in_place(arr, k, start=0, len = arr.length)
   return nil if len < 1
