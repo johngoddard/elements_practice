@@ -23,3 +23,27 @@ def intersection (arr1, arr2)
   
   res
 end
+
+# 14.2: Merge sorted arrays. Assume that the first array is big enough to fit all elements of the first.
+# Don't create a new array 
+
+def merge_sorted(a, b)
+  idx1 = 0
+  idx1 += 1 until a[idx1 + 1].nil?
+  idx2 = b.length - 1
+  
+  curr_idx = a.length - 1 - (a.length - (idx1 + idx2 + 2))
+  
+  while curr_idx >= 0
+    if idx1 < 0 || (b[idx2] > a[idx1] && idx2 >= 0)
+      a[curr_idx] = b[idx2]
+      idx2 -= 1
+    else
+      a[curr_idx] = a[idx1]
+      idx1 -= 1
+    end
+
+    curr_idx -= 1
+  end
+  a
+end
