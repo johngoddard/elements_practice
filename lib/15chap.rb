@@ -25,3 +25,17 @@ def first_greater_value(node, target, curr_greater = nil)
     first_greater_value(node.left, target, curr_greater)
   end
 end
+
+# 15.3: Accept a BST root, and a number k. Find the kth largest element in the tree
+
+def kth_largest_bst(node, k)
+  dfs(node, k).last
+end
+
+def dfs(node, k, processed = [], val = nil)
+  return processed unless node
+  dfs(node.right, k, processed)
+  processed << node.val unless processed.length == k 
+   
+  processed.length == k ? processed : dfs(node.left, k, processed)
+end
