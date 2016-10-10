@@ -2,43 +2,29 @@
 
 require 'byebug'
 
-def score_possibilities(score)
-  sub_score_combos = score_table(score)
-  count = 0 
-  count += 1 if score % 7 == 0
 
-  test_score = score 
+def score_possibilities(score, steps = [2,3,7])
+  steps = steps.sort
+  score_combos = []
 
-  while test_score > 0
-    count += sub_score_combos[1][test_score]
-    test_score -= 7
-  end
-  
-  count
-end
+  steps.each_with_index do |step, idx|
+    step_combos = []
+    (0..score).each do |sub_score|
+      count = 0
+      count += 1 if sub_score % step == 0
 
-def score_table(score)
-  score_combos = [[],[]]
-  (0..score).each do |idx|
-    score_combos[0] << (idx % 2 == 0 ? 1 : 0)
-  end
-  
-
-  (0..score).each do |j|
-    count = 0
-    count += 1 if j % 3 == 0
-    
-    test_score = j
-
-    while test_score > 0
-      count += score_combos[0][test_score]
-      test_score -= 3
+      if idx != 0
+        test = sub_score
+        while test > 0
+          count += score_combos[idx - 1][test]
+          test -= step
+        end
+      end
+      step_combos << count
     end
+    score_combos << step_combos
+  end
 
-    score_combos[1] << count 
-  end 
-
-  score_combos
+  score_combos[steps.length - 1][score]
 end
-
 
