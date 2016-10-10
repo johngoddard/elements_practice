@@ -16,9 +16,12 @@ describe '18.4 three_sum' do
   end
   
   it 'works for no repeats' do 
-    expect(three_sum([11, 2, 5, 7, 3], 12)).to eq(true)
+    expect(three_sum([11, 2, 5, 7, 3], 16)).to eq(true)
   end
 
+  it 'works for  repeats' do 
+    expect(three_sum([11, 2, 5, 7, 3], 12)).to eq(true)
+  end
   it 'returns false when there is no 3 sum' do 
     expect(three_sum([11, 2, 5, 7, 3], 22)).to eq(false)
   end
