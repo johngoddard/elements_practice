@@ -2,7 +2,6 @@
 
 require 'byebug'
 
-
 def score_possibilities(score, steps = [2,3,7])
   steps = steps.sort
   score_combos = []
