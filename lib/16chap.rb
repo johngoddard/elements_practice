@@ -14,7 +14,7 @@ def solve_n_queens(n, row = 0, curr_board = [], result = [])
   (0...n).each do |col|
     if(row == 0 || legal_placement?(row, col, curr_board))
       board = curr_board + [[row, col]]
-      solve_n_queens(n, row + 1, board.dup, result)
+      solve_n_queens(n, row + 1, board, result)
     end
   end
 
