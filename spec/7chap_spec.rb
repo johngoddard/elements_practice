@@ -41,3 +41,9 @@ describe '7.5 #is_palindrome?' do
     expect(is_palindrome?('Ray a Ray')).to eq(false)
   end
 end
+
+describe '7.6. #reverse_words' do 
+  it 'reverses the words in a string' do 
+    expect(reverse_words_manual('Bob likes Alice')).to eq('Alice likes Bob')
+  end
+end

@@ -124,7 +124,7 @@ def replace_and_remove(arr, len)
 end
 
 
-# 7.5 take in a string, return ture if it's a palindrome
+# 7.5 take in a string, return true if it's a palindrome. Ignore non letters
 
 def is_palindrome?(string)
   cleaned = string.chars.select{|ch| ch.between?('a', 'z') || ch.between?("A", "Z") }.join('')
@@ -139,4 +139,48 @@ def is_palindrome?(string)
   end
 
   true
+end
+
+# 7.6 accept a string, and reverse the words in the string
+
+def reverse_words(sentence)
+  sentence.split(' ').reverse.join(' ')
+end
+
+def reverse_words_manual(sentence)
+  mid = sentence.length / 2
+  idx = 0
+  
+  while idx <= mid
+    sentence[idx], sentence[sentence.length - idx - 1] = sentence[sentence.length - idx - 1], sentence[idx]
+    idx += 1
+  end
+  
+  start = 0
+  finish = 0
+  
+  while start < sentence.length 
+    while sentence[finish] != ' ' && finish < sentence.length
+      finish += 1
+    end
+    
+    reverse_word(sentence, start, finish)
+    finish += 1
+    start = finish
+    break if finish == sentence.length
+  end
+  
+  sentence
+end
+
+
+def reverse_word(sentence, start, finish)
+  left = start 
+  right = finish - 1
+
+  while left < right
+    sentence[left], sentence[right] = sentence[right], sentence[left]
+    left += 1
+    right -= 1
+  end
 end
