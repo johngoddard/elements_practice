@@ -122,3 +122,21 @@ def replace_and_remove(arr, len)
     end
   end
 end
+
+
+# 7.5 take in a string, return ture if it's a palindrome
+
+def is_palindrome?(string)
+  cleaned = string.chars.select{|ch| ch.between?('a', 'z') || ch.between?("A", "Z") }.join('')
+  
+  left = 0
+  right = cleaned.length - 1
+
+  while left < right
+    return false unless cleaned[left].downcase == cleaned[right].downcase
+    left += 1
+    right -= 1
+  end
+
+  true
+end

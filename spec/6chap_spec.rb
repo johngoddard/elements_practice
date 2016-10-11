@@ -41,3 +41,19 @@ describe '6.17 #spiral_ordering' do
     expect(spiral_ordering([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])).to eq([1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10])
   end
 end
+
+describe '6.2 #array_addition' do 
+  it 'works for a simple case' do 
+    expect(array_addition([1,2,3])).to eq([1,2,4])
+  end
+
+
+  it 'rounds around 0' do 
+    expect(array_addition([1,2,9,9])).to eq([1,3,0,0])
+  end
+
+  it 'adds a leading number' do 
+    expect(array_addition([9])).to eq([1,0])
+  end
+end
+

@@ -32,3 +32,12 @@ describe '7.4 #replace_and_remove' do
     expect(arr.take(8)).to eq(%w(d d c d c d d c))
   end
 end
+
+describe '7.5 #is_palindrome?' do 
+  it 'returns true for a palindrome' do 
+    expect(is_palindrome?('A man, a plan, a canal, Panama')).to eq(true)
+  end
+  it 'returns false for a non-palindrome' do 
+    expect(is_palindrome?('Ray a Ray')).to eq(false)
+  end
+end

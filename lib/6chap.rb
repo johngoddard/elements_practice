@@ -105,3 +105,27 @@ def spiral_ordering(arr)
   res
 end
 
+# 6.2: Accept an array representation of a decimal number D, and return an 
+# array representation of D + 1. 
+#
+# E.g. [1,2,9] => [1,3,0]
+
+def array_addition(arr)
+  complete = false
+  idx = arr.length - 1
+
+  arr[idx] += 1
+
+  while arr[idx] == 10
+    arr[idx] = 0
+    if idx == 0
+      arr.unshift(1)
+      break
+    end
+
+    arr[idx - 1] += 1
+    idx -= 1
+  end
+
+  arr
+end
