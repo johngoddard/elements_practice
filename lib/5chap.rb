@@ -3,12 +3,15 @@
 
 def reversed_int(num)
   negative = num < 0 ? true : false
-  str_num = num.to_s
-  res = ''
-  
-  (str_num.length - 1).downto(0).each do |i|
-    res << str_num[i] unless str_num[i] == '-'
-  end
+  num = -num if negative
 
-  negative ? -res.to_i : res.to_i
+  res = 0
+  
+  while num > 0
+    res *= 10
+    res += num % 10
+    num /= 10
+  end
+  
+  negative ? -res : res
 end
